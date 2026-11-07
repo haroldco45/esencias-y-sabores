@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esencias y Sabores · Hechas con el amor de mamá</title>
+<meta name="description" content="Sales, salsas, ajíes y esencias caseras de Caucasia. Pide por WhatsApp al 314 711 5798.">
+<meta name="theme-color" content="#a3161a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+
+<!-- Vista previa al compartir el enlace -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Esencias y Sabores · Hechas con el amor de mamá">
+<meta property="og:description" content="Sales, salsas, ajíes y esencias caseras. Pide por WhatsApp y dale un toque único a tus comidas.">
+<meta property="og:image" content="https://esencias-y-sabores.netlify.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://esencias-y-sabores.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://esencias-y-sabores.netlify.app/img/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <img src="img/icon-192.png" alt="">
+    <span>Esencias <em>y</em> Sabores</span>
+  </div>
+  <button id="langBtn" class="lang" aria-label="Idioma">EN</button>
+</header>
+
+<section class="hero">
+  <div class="hero-slides" id="heroSlides"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-text">
+    <p class="kicker" data-i18n="kicker">Caucasia, Antioquia</p>
+    <h1>Esencias <span>y</span> Sabores</h1>
+    <p class="script" data-i18n="tagline">Hechas con el amor de mamá</p>
+    <p class="lead" data-i18n="lead">Salsas, esencias y acompañamientos deliciosos. Calidad, sabor y tradición en cada producto.</p>
+    <div class="hero-cta">
+      <a href="#catalogo" class="btn btn-gold" data-i18n="ctaSee">Ver productos</a>
+      <a id="heroWa" class="btn btn-ghost" target="_blank" rel="noopener" data-i18n="ctaWa">Pedir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><div class="ticker-in" id="ticker"></div></div>
+
+<section class="prices">
+  <div class="pcard">
+    <span class="pnum">$13.000</span>
+    <span data-i18n="p13">Sales sazonadoras: tocineta, ahumada, picante, parrillera y de la casa</span>
+  </div>
+  <div class="pcard alt">
+    <span class="pnum">$15.000</span>
+    <span data-i18n="p15">Salsas, ajíes, encurtidos y esencias</span>
+  </div>
+</section>
+
+<section id="catalogo" class="catalog">
+  <h2 data-i18n="catTitle">Nuestros productos</h2>
+  <div class="tabs" id="tabs"></div>
+  <input id="search" class="search" type="search" placeholder="Buscar producto..." data-i18n-ph="search">
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="mama">
+  <img src="img/flyer.jpg" alt="Volante Esencias y Sabores" loading="lazy">
+  <div>
+    <h2 data-i18n="mamaTitle">Del fogón de mamá a tu mesa</h2>
+    <p data-i18n="mamaText">Cada frasco se prepara en casa, en pequeñas tandas, con ingredientes frescos y la sazón de siempre. Sin afanes, como se hacen las cosas buenas.</p>
+    <a href="https://instagram.com/esencias_y_sabores" target="_blank" rel="noopener" class="link">Instagram · @esencias_y_sabores</a>
+    <a href="https://www.facebook.com/search/top?q=Esencias%20y%20Sabores" target="_blank" rel="noopener" class="link">Facebook · Esencias y Sabores</a>
+    <a href="tel:+573147115798" class="link" data-i18n="call">Llamar · 314 711 5798</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <p class="script big" data-i18n="footSlogan">¡Dale un toque único a tus comidas!</p>
+  <p class="small"><span data-i18n="madeBy">App hecha por</span> <a href="https://vibraspositivashm.com" target="_blank" rel="noopener">Vibras Positivas HM</a> · 311 770 0431</p>
+  <p class="small" id="license"></p>
+</footer>
+
+<!-- Carrito -->
+<button id="cartBtn" class="cartbar hidden">
+  <span id="cartCount">0</span>
+  <span data-i18n="seeOrder">Ver mi pedido</span>
+  <strong id="cartTotal">$0</strong>
+</button>
+
+<div id="sheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheet-box">
+    <div class="sheet-head">
+      <h3 data-i18n="myOrder">Mi pedido</h3>
+      <button id="closeSheet" class="x" aria-label="Cerrar">×</button>
+    </div>
+    <div id="cartList"></div>
+    <div class="sheet-total"><span>Total</span><strong id="sheetTotal">$0</strong></div>
+    <label><span data-i18n="name">Tu nombre</span><input id="cName" autocomplete="name"></label>
+    <label><span data-i18n="address">Barrio / dirección</span><input id="cAddr" autocomplete="street-address"></label>
+    <label><span data-i18n="note">Nota (opcional)</span><input id="cNote"></label>
+    <button id="sendWa" class="btn btn-wa" data-i18n="send">Enviar pedido por WhatsApp</button>
+    <p class="small muted" data-i18n="sendNote">El domicilio y la forma de pago se acuerdan por WhatsApp.</p>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

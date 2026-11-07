@@ -1,0 +1,15 @@
+{
+  "name": "Esencias y Sabores",
+  "short_name": "Esencias",
+  "description": "Sales, salsas, ajíes y esencias hechas con el amor de mamá",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff6e4",
+  "theme_color": "#a3161a",
+  "lang": "es-CO",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
